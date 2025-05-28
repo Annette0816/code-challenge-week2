@@ -74,11 +74,7 @@ class Magazine:
         return cls.instance_from_db(row) if row else None
 
 
-    @classmethod
-    def find_by_name(cls, name):
-        row = CURSOR.execute("SELECT * FROM magazines WHERE name = ?", (name,)).fetchone()
-        return cls.instance_from_db(row) if row else None
-
+    
 
     @classmethod
     def instance_from_db(cls, row):
